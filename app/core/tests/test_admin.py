@@ -12,13 +12,11 @@ class AdminSiteTests(TestCase):
             password='password123'
         )
         self.client.force_login(self.admin_user)
-        print('before self.user')
         self.user = get_user_model().objects.create_user(
             email='test@londonappdev.com',
             password='password123',
             name='Test user full name'
         )
-        print('after self.user')
 
     def test_users_listed(self):
         """Test that users are listed on user page"""
